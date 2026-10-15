@@ -1,0 +1,7 @@
+research/
+.openai/*.tar*
+*.log
+node_modules/
+.env
+.env.*
+!.env.example
