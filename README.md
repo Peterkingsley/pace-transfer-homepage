@@ -1,5 +1,7 @@
 # Pace Transfer homepage
 
+**Live website:** https://peterkingsley.github.io/pace-transfer-homepage/
+
 A responsive, buildless homepage inspired by Morse Money's layout, retaining Pace's logo and lime green. Includes an expanding photo gallery, alternating product stories, an interactive product walkthrough, FAQs and an app download QR code.
 
 The copy now leads with everyday motivations, connection and choice: “Money for the life you’re building.” It uses original Pace wording inspired by Morse's warm, direct voice, while keeping Pace's existing product facts.
@@ -36,7 +38,7 @@ The download link, legal destinations, support email, social links and feature d
 
 ## Validation and hosting
 
-See `VERIFICATION.md`. The site has passed desktop and mobile checks. The `main` branch holds the source; `dist/` contains the deployable website. A `gh-pages` branch can publish just that directory through GitHub Pages. The original pacetrf.com domain is separate from this redesign.
+See `VERIFICATION.md`. The site has passed desktop and mobile checks and is publicly hosted on GitHub Pages. The `main` branch holds the source; `dist/` contains the deployable website. The `gh-pages` branch publishes that directory through GitHub Pages. The original pacetrf.com domain is separate from this redesign.
 
 To update the Pages branch after committing changes:
 

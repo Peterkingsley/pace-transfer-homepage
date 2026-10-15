@@ -16,4 +16,8 @@
 
 Automated browser checks: `research/qa/check.cjs`; results: `research/qa/results.json`. Chrome ran in an isolated headless test session because the desktop automation helper was unavailable. Full-page screenshots eagerly loaded images for capture; production images retain lazy loading.
 
-Payment processing, live rates and store installation flows are outside this marketing homepage. Hosting registration failed earlier, and no Pace project appeared in subsequent inventory checks; the result is local, not deployed.
+Payment processing, live rates and store installation flows are outside this marketing homepage.
+
+## Public deployment
+
+Published at https://peterkingsley.github.io/pace-transfer-homepage/ from the `gh-pages` branch. GitHub reported the deployment built successfully. An unauthenticated Chrome session verified HTTP 200, the latest homepage copy, all images loading, gallery navigation, walkthrough selection and the app-download destination, with no page or HTTP errors. The source repository is public at https://github.com/Peterkingsley/pace-transfer-homepage.
