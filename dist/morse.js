@@ -90,4 +90,28 @@ steps.forEach((step,index) => {
     if(next!==undefined){event.preventDefault();showStep(steps[next]);steps[next].focus();}
   });
 });
+
+const calculator = document.querySelector('[data-calculator]');
+if (calculator) {
+  const amount = document.querySelector('#calc-amount');
+  const source = document.querySelector('#calc-source');
+  const destination = document.querySelector('#calc-destination');
+  const result = document.querySelector('#calc-result');
+  const rateLabel = document.querySelector('#calc-rate');
+  const illustrativeRates = {NGN:{rate:1500,symbol:'₦',decimals:0},USD:{rate:1,symbol:'$',decimals:2},EUR:{rate:.92,symbol:'€',decimals:2},GBP:{rate:.78,symbol:'£',decimals:2},KES:{rate:129,symbol:'KSh',decimals:0},GHS:{rate:15.2,symbol:'GH₵',decimals:2}};
+  function updateCalculator() {
+    const destinationData = illustrativeRates[destination.value];
+    const numericAmount = Math.max(0, Number.parseFloat(amount.value) || 0);
+    const converted = numericAmount * destinationData.rate;
+    const display = new Intl.NumberFormat('en-US',{minimumFractionDigits:destinationData.decimals,maximumFractionDigits:destinationData.decimals}).format(converted);
+    result.textContent = `${destinationData.symbol}${display}`;
+    const sourceName = source.value;
+    const rateDisplay = new Intl.NumberFormat('en-US',{minimumFractionDigits:destinationData.decimals,maximumFractionDigits:destinationData.decimals}).format(destinationData.rate);
+    rateLabel.textContent = `1 ${sourceName} ≈ ${destinationData.symbol}${rateDisplay} ${destination.value}`;
+  }
+  [amount,source,destination].forEach(control => control.addEventListener('input', updateCalculator));
+  [source,destination].forEach(control => control.addEventListener('change', updateCalculator));
+  updateCalculator();
+}
+
 document.querySelector('#year').textContent = String(new Date().getFullYear());
